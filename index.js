@@ -18,9 +18,13 @@ setTimeout(function(){
 },5000);
 
 
-bot.on('message', function(event) {
-    console.log(event); //把收到訊息的 event 印出來看看
-});
+//bot.on('message', function(event) {
+//    console.log(event); //把收到訊息的 event 印出來看看
+//});
+
+var timer;
+var pm = [];
+_getJSON();
 
 const app = express();
 const linebotParser = bot.parser();
