@@ -10,6 +10,14 @@ var bot = linebot({
     channelAccessToken: "OBMm7XASIF3y4WaLNPtzDP6UtU5RtaftEGuUdwDf3RvKcAc+ap+auvi6azbALVVyJ3bRmQSJZrjtnawjS2RvIOvwv8CtbyzalT7XsIfDE7gE010+AYwpTc2NkMazD+jynU4M1vI2n0HazWx/MkJPHAdB04t89/1O/w1cDnyilFU="
 });
 
+setTimeout(function(){
+    var userId = '1503290716';
+    var sendMsg = '要發送的文字';
+    bot.push(userId,sendMsg);
+    console.log('send: '+sendMsg);
+},5000);
+
+
 bot.on('message', function(event) {
     console.log(event); //把收到訊息的 event 印出來看看
 });
