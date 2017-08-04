@@ -1,5 +1,6 @@
 var linebot = require('linebot');
 var express = require('express');
+var getJSON = require('get-json');
 
 var bot = linebot({
     channelId: "1503290716",
@@ -7,22 +8,23 @@ var bot = linebot({
     channelAccessToken: "OBMm7XASIF3y4WaLNPtzDP6UtU5RtaftEGuUdwDf3RvKcAc+ap+auvi6azbALVVyJ3bRmQSJZrjtnawjS2RvIOvwv8CtbyzalT7XsIfDE7gE010+AYwpTc2NkMazD+jynU4M1vI2n0HazWx/MkJPHAdB04t89/1O/w1cDnyilFU="
 });
 
-setTimeout(function(){
-    var userId = 'joejolan';
-    var sendMsg = 'TESTTTT';
-    bot.push(userId,sendMsg);
-    console.log('send: '+sendMsg);
-},5000);
+var timer;
+var pm = [];
+_getJSON();
+
+//setTimeout(function(){
+//    var userId = 'joejolan';
+//    var sendMsg = 'TESTTTT';
+//    bot.push(userId,sendMsg);
+//    console.log('send: '+sendMsg);
+//},5000);
 
 
 //bot.on('message', function(event) {
 //    console.log(event); //把收到訊息的 event 印出來看看
 //});
 
-var timer;
-var pm = [];
-_getJSON();
-
+_bot();
 const app = express();
 const linebotParser = bot.parser();
 app.post('/', linebotParser);
@@ -59,7 +61,6 @@ function _bot() {
       });
     }
   });
-
 }
 
 function _getJSON() {
@@ -75,23 +76,3 @@ function _getJSON() {
   timer = setInterval(_getJSON, 1800000); //每半小時抓取一次新資料
 }
 
-function _japan() {
-  clearTimeout(timer2);
-  request({
-    url: "http://rate.bot.com.tw/Pages/Static/UIP003.zh-TW.htm",
-    method: "GET"
-  }, function(error, response, body) {
-    if (error || !body) {
-      return;
-    } else {
-      var $ = cheerio.load(body);
-      var target = $(".rate-content-sight.text-right.print_hide");
-      console.log(target[15].children[0].data);
-      jp = target[15].children[0].data;
-      if (jp < 0.28) {
-        bot.push('使用者 ID', '現在日幣 ' + jp + '，該買！');
-      }
-      timer2 = setInterval(_japan, 120000);
-    }
-  });
-}
