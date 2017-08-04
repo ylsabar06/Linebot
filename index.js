@@ -5,9 +5,9 @@ var linebot = require('linebot');
 var express = require('express');
 
 var bot = linebot({
-    channelId: channelId,
-    channelSecret: channelSecret,
-    channelAccessToken: channelAccessToken
+    channelId: "channelId",
+    channelSecret: "channelSecret",
+    channelAccessToken: "channelAccessToken"
 });
 
 setTimeout(function(){
