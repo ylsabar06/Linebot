@@ -1,13 +1,10 @@
 var linebot = require('linebot');
 var express = require('express');
-var line001 = 1503290716;
-var line002 = f4e7099d5aecde6f4cccd72c0f36a9c0;
-var line003 = OBMm7XASIF3y4WaLNPtzDP6UtU5RtaftEGuUdwDf3RvKcAc+ap+auvi6azbALVVyJ3bRmQSJZrjtnawjS2RvIOvwv8CtbyzalT7XsIfDE7gE010+AYwpTc2NkMazD+jynU4M1vI2n0HazWx/MkJPHAdB04t89/1O/w1cDnyilFU=;
 
 var bot = linebot({
-    channelId: line001,
-    channelSecret: line002,
-    channelAccessToken: line003
+    channelId: "1503290716",
+    channelSecret: "f4e7099d5aecde6f4cccd72c0f36a9c0",
+    channelAccessToken: "OBMm7XASIF3y4WaLNPtzDP6UtU5RtaftEGuUdwDf3RvKcAc+ap+auvi6azbALVVyJ3bRmQSJZrjtnawjS2RvIOvwv8CtbyzalT7XsIfDE7gE010+AYwpTc2NkMazD+jynU4M1vI2n0HazWx/MkJPHAdB04t89/1O/w1cDnyilFU="
 });
 
 setTimeout(function(){
