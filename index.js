@@ -1,10 +1,13 @@
 var linebot = require('linebot');
 var express = require('express');
+var line001 = channelId;
+var line002 = channelSecret;
+var line003 = channelAccessToken;
 
 var bot = linebot({
-    channelId: 'channelId',
-    channelSecret: 'channelSecret',
-    channelAccessToken: 'channelAccessToken'
+    channelId: line001,
+    channelSecret: line002,
+    channelAccessToken: line003
 });
 
 setTimeout(function(){
