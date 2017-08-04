@@ -8,8 +8,8 @@ var bot = linebot({
 });
 
 setTimeout(function(){
-    var userId = '1503290716';
-    var sendMsg = '要發送的文字';
+    var userId = 'joejolan';
+    var sendMsg = 'TESTTTT';
     bot.push(userId,sendMsg);
     console.log('send: '+sendMsg);
 },5000);
