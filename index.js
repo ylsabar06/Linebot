@@ -1,6 +1,3 @@
-/**
- * Created by lan on 2017/2/27.
- */
 var linebot = require('linebot');
 var express = require('express');
 
